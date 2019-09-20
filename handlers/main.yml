@@ -1,0 +1,6 @@
+---
+# TODO the boot location needs to be more dynamic
+- name: Update Boot Image
+  shell: /usr/sbin/grub2-mkconfig -o /boot/efi/EFI/{{ ansible_distribution | lower }}/grub.cfg
+- name: Update Dracut
+  command: /usr/bin/dracut --force
